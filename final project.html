@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>종합 프로젝트</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        table.type08 {
+        border-collapse: collapse;
+        text-align: center;
+        line-height: 1.5;
+        border-left: 1px solid #ccc;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        table.type08 thead th {
+        padding: 10px;
+        font-weight: bold;
+        border-top: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 2px solid #c00;
+        background: #dcdcd1;
+        }
+        table.type08 tbody th {
+        width: 150px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        background: #ececec;
+        }
+        table.type08 td {
+        width: 1000px;
+        padding: 10px;
+        vertical-align: top;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        }
+        .sectionPosition{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="header">
+      <div class="inner">
+            <!-- <a href="index.html" class="logo">dongcheol's portfolio</a> -->
+            <nav id="nav">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="works.html">Works</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <section class="sectionPosition">
+        <article1>
+            <table class="type08">
+                <h3>< 프로젝트 개요 및 SWOT분석 ></h3>
+                <thead>
+                <tr>
+                  <th scope="cols">프로젝트</th>
+                  <th scope="cols">BMJ Where</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">개요</th>
+                  <td> 부산맛집정보를 제공하는 사이트로 메뉴별 검색이 가능하고 리뷰와 평점 기능이 있으며 제휴음식점을 통하여 할인쿠폰을 발급하여 회원가입을 유도하는 4인 프로젝트</td>
+                </tr>
+                <tr>
+                  <th scope="row">개발기간</th>
+                  <td> 2021.10.12 ~ 2021.10.22 </td>
+                </tr>
+                <tr>
+                  <th scope="row">개발환경</th>
+                  <td>IntelliJ(Apache Tomcat), MariaDB(heidiSQL), HTML5, CSS3, Javascript, JQuery, JAVA(SpringBoot, JPA), ThymeLeaf</td>
+                </tr>
+                <tr>
+                  <th scope="row">Strengths</th>
+                  <td> 할인쿠폰기능이 추가되어 회원가입을 유도하여 사이트의 인지도를 높일 수 있음 </td>
+                </tr>
+                <tr>
+                    <th scope="row">Weaknesses</th>
+                    <td> 개발기간 단축으로 인한 기능 구현의 제약 </td>
+                </tr>
+                <tr>
+                    <th scope="row">Opportunities</th>
+                    <td> 조원들과의 협업을 통하여 유지보수 및 오류수정에 있어 빠른 대처가 가능함</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Threats</th>
+                    <td> 기능구현등에 있어서 오류발생 가능성을 배제할 수 없음 </td>
+                  </tr>  
+                
+                </tbody>
+              </table><br><br>
+
+        </article1>
+        <article2>
+            <h3> < 유스케이스다이어그램 ></h3>
+            <img src="images/유스케이스.png">
+
+            <h3> &lt Controller 클래스 &gt</h3>
+            <h4> - 클라이언트로부터 요청받은 뷰페이지와 데이터를 model을 통해서 반환</h4>
+            <img src="images/Package controller.png" width="50%">
+
+            <h3> &lt DTO 클래스 &gt</h3>
+            <h4> - DB의 데이터를 매핑하기 위한 데이터 객체</h4>
+            <img src="images/DTOPackage.png" width="60%">
+
+            <h3> &lt Entity &gt </h3>
+            <h4> - 실제 DB의 테이블과 매핑되는 클래스</h4>
+            <img src="images/entity.png" width="60%">
+
+            <h3> &lt Repository 클래스 &gt</h3>
+            <h4> - JPARepository를 상속받아서 데이터베이스의 데이터를 CRUD 하는 인터페이스</h4>
+            <h4> - Create / Read / Update / Delete</h4> 
+            <img src="images/repository.png" width="50%">
+            
+            <h3> &lt Security Config &gt</h3>
+            <h4> - 권한부여 및 로그인, 로그아웃을 설정</h4>
+            <img src="images/Package config.png">
+
+            <h3> &lt Security 클래스 &gt</h3>
+            <h4> - 회원가입 시 권한부여, 패스워드 인코딩, 로그인 기능을 제공</h4>
+            <img src="images/security.png" width="60%">
+
+            <h3> &lt Service 클래스 &gt</h3>
+            <h4> - 컨트롤러에서 넘어온 요청을 처리하기 위하여 Service는 필드안의 값을 가공하여 dto to entity로 또는 그 반대로 메소드 선언 후 컨트롤러에 넘김 </h4>
+            <img src="images/Package service.png" width="60%">
+
+            <h3> &lt BmjApplication &gt</h3>
+            <h4> 메인메소드를 실행하며 BaseEntity의 시간관련 등록의 @EnableJpaAuditing과 스프링부트의 기본적인 설정을 하는 @SpringBootAplication을 선언</h4>
+            <img src="images/BmjApplication.png" width="60%">
+
+            <h3> &lt ERD다이어그램 &gt </h3>    
+            <img src="images/ERD 다이어그램.png" style="width: 60%">
+            
+
+           
+        </article2>
+        <article3>
+            <h3> < 기능 구현 > </h3>
+            <h4> <메인화면의 상단부></h4>
+            <img src="images/bmj1.png" ><br><br>
+
+            <h4> <메인화면의 하단부></h4>
+            <img src="images/bmj2.png"><br><br>
+
+            <h4> &lt EAT딜 페이지를 클릭 시 제휴업체를 소개하고 할인 정보를 제공&gt </h4>
+            <img src="images/bmj3.png" width="65%"><br><br>
+
+            <h4> <제휴업체 선택 시 할인쿠폰 발급> </h4>
+            <img src="images/bmj4.png"><br><br>
+
+            <h4> <카테고리별 맛집에서 카페 선택 시 화면> </h4>
+            <img src="images/bmj5.png" width="65%"><br><br>
+
+            <h4> <카테고리별 맛집에서 양식 선택 시 화면> </h4>
+            <img src="images/bmj6.png" width="65%"><br><br>
+
+            <h4> <맛집 리스트 게시판의 검색창> </h4>
+            <img src="images/bmj7.png" width="65%">
+
+            <h4> <가게명과 주소로 맛집을 검색 가능> </h4>
+            <img src="images/bmj8.png" width="65%">
+
+            <h4> <한페이지에 업체 5개씩 페이징처리됨></h4>
+            <img src="images/bmj9.png" width="65%">
+
+            <h4> <맛집 조회 화면> </h4>
+            <img src="images/bmj10.png" width="65%"> <br><br>
+
+            <h4> <조회 화면에서 모달창을 통해 이미지 확대> </h4>
+            <img src="images/bmj11.png" width="65%"> <br><br>
+
+            <h4> &lt Map API에서 가게 위치 확인&gt</Map></h4>
+            <img src="images/bmj12.png" width="65%"> <br><br>
+
+            <h4> <회원 가입 후 리뷰 작성 기능> </h4>
+            <img src="images/bmj13.png" width="65%"> <br><br>
+
+            <h4> <회원 가입 기능> </h4>
+            <img src="images/bmj14.png" width="65%"> <br><br>
+
+            <h4> <회원 가입 완료> </h4>
+            <img src="images/bmj15.png" width="65%"> <br><br>
+
+            <h4> <관리자 로그인 기능> </h4>
+            <img src="images/bmj16.png" width="65%"> <br><br>
+
+            <h4> <관리자 로그인 완료> </h4>
+            <img src="images/bmj17.png" width="65%"> <br><br>
+
+            <h4> <관리자 로그인 후 맛집 등록> </h4>
+            <img src="images/bmj18.png" width="65%"> <br><br>
+
+            <h4> <맛집 등록 기능> </h4>
+            <img src="images/bmj19.png" width="65%"> <br><br>
+
+            <h4> <맛집 정보 수정 기능> </h4>
+            <img src="images/bmj20.png" width="65%"> <br><br>
+
+
+
+        </article3>
+
+    </section>
+</body>
+</html>

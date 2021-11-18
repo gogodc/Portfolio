@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>광안리 카페</title>
+	<style>
+		@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+		@import url(https://fonts.googleapis.com/css?family=Oleo+Script);
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background: #fff;
+			font-family: "Jeju Gothic", serif;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		nav a:link,
+		a:visited {
+			color: #fff;
+		}
+		
+		nav a:active {
+			color: yellow;
+		}
+
+		h1 {
+			font-size: 1.8em;
+		}
+
+		h2 {
+			font-size: 1.3em;
+		}
+
+		p {
+			font-size: 1.3em;
+			line-height: 2.5;
+		}
+
+		li {
+			font-size: 1em;
+			line-height: 2;
+		}
+
+		/* 모바일 - 767px 이하 */
+		#container {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		header {
+			width: 100%;
+			height: 300px;
+			background: url(images/espresso.jpeg) center no-repeat;
+			background-size: cover;
+			margin: 0;
+		}
+
+		nav {
+			height: 50px;
+			background: rgb(170, 6, 88);
+		}
+
+		#main-nav {
+			list-style: none;
+			margin: 0;
+			padding: 10px;
+		}
+
+		#main-nav li {
+			display: inline-block;
+			color: #fff;
+			font-family: "맑은 고딕", 돋움;
+			font-size: 0.8em;
+			margin: 5px 15px;
+		}
+
+		section {
+			position: relative;
+			width: 100%;
+			padding: 15px 5% 10px 5%;
+		}
+
+		#container section:nth-child(odd) {
+			background: #eee;
+		}
+
+		.page-title {
+			position: absolute;
+			top: 20px;
+			left: 0;
+			padding: 30px 50px;
+		}
+
+		.page-title h1 {
+			margin-bottom: 30px;
+		}
+
+		.content {
+			margin: 80px auto 10px;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			width: 90%;
+			padding: 20px;
+		}
+
+		.content ol {
+			margin-top: 20px;
+		}
+
+		.sub-titles {
+			color: #0094ff;
+			font-weight: 600;
+		}
+
+		.photo {
+			display: none;
+		}
+
+		footer {
+			position: relative;
+			width: 100%;
+			height: 100px;
+			background: rgb(170, 6, 88);
+		}
+
+		footer p {
+			font-family: 'Oleo Script', cursive;
+			font-size: 1.5em;
+			line-height: 100px;
+			color: white;
+			text-align: center;
+		}
+
+		/* 태블릿 - 768px 이상 */
+		@media screen and (min-width:768px) {
+			header {
+				height: 400px;
+			}
+
+			#intro,
+			#map {
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				width: 50%;
+				height: 400px;
+				float: left;
+				margin: 0;
+				border: 1px dotted #ccc;
+			}
+
+			#choice {
+				clear: left;
+			}
+		}
+
+		/* PC - 992px 이상 */
+		@media screen and (min-width:992px) {
+			#container {
+				width: 995px;
+				margin: 0 auto;
+				border: 1px solid #ccc;
+			}
+
+			header {
+				height: 500px;
+			}
+
+			#intro,
+			#map,
+			#roastery,
+			#choice {
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				clear: both;
+				position: relative;
+				width: 100%;
+				height: 420px;
+				padding: 15px 2% 10px 5%;
+			}
+
+			.content {
+				margin: 80px auto 10px;
+				width: 90%;
+				padding: 20px;
+			}
+
+			.photo {
+				width: 42%;
+				display: block;
+			}
+
+			.photo>img {
+				width: 100%;
+				max-width: 320px;
+				height: auto;
+				margin-bottom: 30px;
+			}
+
+			.text {
+				width: 42%;
+			}
+
+			#intro .photo,
+			#map .photo {
+				float: left;
+				margin-right: 5%;
+			}
+
+			#intro .text,
+			#map .text {
+				float: left;
+			}
+
+			#choice .photo {
+				float: right;
+				margin-right: 5%;
+			}
+
+			#roastery .photo {
+				float: right;
+				margin-right: 5%;
+			}
+			#choice .text {
+				float: left;
+			}
+			#roastery .text {
+				float: left;
+			}
+
+			footer {
+				clear: both;
+			}
+		
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="container">
+		<div>
+			<!-- <a href="index.html" class="logo">dongcheol's portfolio</a> -->
+			<!-- <nav> -->
+				<a href="home.html" style="color: black;">Home</a>
+				<a href="about.html" style="color: black;">About</a>
+				<a href="works.html" style="color: black;">Works</a>
+				<a href="contact.html" style="color: black;">Contact</a>
+			<!-- </nav> -->
+		</div>
+		<header>
+			<nav id="nav">
+				<ul id="main-nav">
+					<li><a href="#choice" class="text-bold">이 달의 추천 커피</a></li>
+					<li><a href="#intro" class="text-bold">광안리 카페 소개</a></li>
+					<li><a href="#roastery" class="text-bold">로스터리</a></li>
+					<li><a href="#map" class="text-bold">오시는 길</a></li>
+
+				</ul>
+			</nav>
+		</header>
+
+		<section id="choice">
+			<div class="page-title">
+				<h1>이 달의 추천 커피</h1>
+			</div>
+			<div class="content">
+				<div class="photo">
+					<img src="images/Geisha.jpeg" alt="게이샤 커피" style="border:1px solid white; border-radius:50%">
+
+				</div>
+				<div class="text">
+					<h2>Geisha Coffee 게이샤 커피</h2>
+					<ol>
+						<li>1931년 에티오피아의 카파 지역에서 최초 발견되어 그 지역의 숲 'Geisha'에서 유래.</li>
+						<li>일반 커피와는 달리 가늘고 긴 체리열매와 커피콩이 특징이다. 
+							커피는 부드러움 속에 감춰진 강렬한 꽃향과 재스민 향기와 같은 아로마, 섬세하면서도 독특한 산미와 균형감, 
+							화이트와인과 같은 경쾌함, 딸기, 망고, 파파야, 귤 등의 맛으로 표현된다.</li>
+
+					</ol>
+				</div>
+			</div>
+		</section>
+
+		<section id="intro">
+			<div class="page-title">
+				<h1>광안리 카페 소개</h1>
+			</div>
+			<div class="content">
+				<div class="photo">
+					<img src="images/ocean.jpg" alt="" style="border:1px solid white; border-radius:50%">
+				</div>
+				<div class="text">
+					<li>광안리 카페는 '바다, 그리고 파도 위의 휴식'을 슬로건으로 하는 로스터리 카페입니다.</li>
+					<li>광안리 카페는 커피 잔 위에 파도가 이는 곳, 그리고 파도 소리와 함께 휴식을 취할 수 있는 곳으로,
+						커피 잔 위의 잔잔한 파도처럼 긴 여운과 추억이 남는 공간이 되도록 최선을 다하겠습니다.</li>
+				</div>
+			</div>
+		</section>
+
+		<section id="roastery">
+			<div class="page-title">
+				<h1>로스터리 카페 </h1>
+			</div>
+			<div class="content">
+				<div class="photo">
+					<img src="images/Roastery.jpeg" alt="이미지 준비중" style="border:1px solid white; border-radius:50%">
+
+				</div>
+				<div class="text">
+					<li>어떻게 하면, 고객에게 맛있는 커피를 제공할 수 있을까. 어떻게 하면 어제도 오늘도 똑같이 맛있는 커피를 제공할 수 있을까.
+						로스터기 앞에서, 지금, 우리는 그 해답을 향해 한발 한발 나아가고 있습니다. 
+						자체 로스팅한 원두로 균일한 맛의 커피를 제공합니다.
+					</li>
+					
+				</div>
+			</div>
+		</section>
+		<section id="map">
+			<div class="page-title">
+				<h1>오시는길</h1>
+			</div>
+			<div class="content">
+				<div class="photo">
+					<img src="images/map.jpeg" alt="" style="border:1px solid white; border-radius:50%">
+				</div>
+				<div class="text">
+					<p>주소 : 부산시 수영구 광안해변로 123 <br>대표전화 : 051-1234-5678
+						<br>사업자 등록번호 : 618-12-12345678</li>
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<p>My times with Coffee</p>
+		</footer>
+	</div>	
+		
+</body>
+
+</html>
